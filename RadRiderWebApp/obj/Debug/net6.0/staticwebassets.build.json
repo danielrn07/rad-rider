@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "V6nG2/EnMdLsEJBR8QhZPezZkimHc+7TOcXAVYKemmM=",
+  "Hash": "S5TInBKQF/LSh5B2Yi0KUd01bzr2Br0m7VeY8M5wF4s=",
   "Source": "RadRiderWebApp",
   "BasePath": "_content/RadRiderWebApp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/obj/Debug/net6.0/scopedcss/projectbundle/RadRiderWebApp.bundle.scp.css"
+    },
+    {
+      "Identity": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/css/bootstrap.css",
+      "SourceId": "RadRiderWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/",
+      "BasePath": "_content/RadRiderWebApp",
+      "RelativePath": "css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/bootstrap.css"
     },
     {
       "Identity": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/css/site.css",
