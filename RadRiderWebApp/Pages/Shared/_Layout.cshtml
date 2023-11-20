@@ -17,7 +17,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             @* NAV *@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
@@ -40,24 +40,33 @@
     </main>
 </div>
 
-
-
 <footer class="footer text-muted">
-    <div class="bg-dark pt-5 d-flex">
-        <div class="container">
-            <h2 class="text-light text-uppercase m-0">
-                Institucional
-            </h2>
-            
-            <a class="nav-link p-0 text-white" asp-area="" asp-page="/AboutUs">Sobre nós</a>
+    <div class="bg-dark">
+        <div class="container py-5 d-flex">
+            <div class="">
+                <h2 class="text-light text-uppercase m-0">
+                    Institucional
+                </h2>
+                <a class="nav-link p-0 text-white mt-4" asp-area="" asp-page="/AboutUs">Sobre nós</a>
+                <a class="nav-link p-0 text-white mt-3" asp-area="" asp-page="/PrivacyPolicy">Política de Privacidade</a>
+            </div>
+            <div class="ml-5">
+                <h2 class="text-light text-uppercase m-0">
+                    Contato
+                </h2>
+                <p class="contact-text mt-4 p-0">contato@redrider.com</p>
+                <p class="contact-text mt-3 p-0">+55 (99) 99999-9999</p>
+            </div>
         </div>
     </div>
-    <div class="bg-dark"  style="opacity: 0.95;">
+
+    <div class="bg-dark py-3" style="opacity: 0.95;">
         <div class="container">
-                <span>&copy; @DateTime.Now.Year – Todos os direitos reservados a Daniel Nascimento</span>
-            </div>
+            <span>
+                &copy; @DateTime.Now.Year – Todos os direitos reservados a Daniel Nascimento
+            </span>
+        </div>
     </div>
-    
 </footer>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
