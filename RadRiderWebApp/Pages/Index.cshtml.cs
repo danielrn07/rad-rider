@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace RadRiderWebApp.Pages;
 
 public class IndexModel : PageModel

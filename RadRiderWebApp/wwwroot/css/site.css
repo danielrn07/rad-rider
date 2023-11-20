@@ -2,6 +2,10 @@ html {
   font-size: 14px;
 }
 
+p {
+  font-size: 14px;
+}
+
 * {
   font-family: Montserrat, sans-serif !important;
 }
@@ -19,6 +23,24 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary);
 }
 
 .logo {
@@ -46,5 +68,40 @@ body {
 @media (min-width: 768px) {
   .banner {
     background-position-y: 20%;
+  }
+}
+
+.parallax {
+  background-image: url("https://images.unsplash.com/photo-1569074187119-c87815b476da?auto=format&fit=crop&q=80&w=2650&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  padding: 10rem 0 10rem 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 50px 0 50px 0;
+  position: relative;
+  z-index: -2;
+}
+
+.parallax::before {
+  background-color: var(--dark);
+  opacity: 0.7;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.grid-about-us {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .grid-about-us {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

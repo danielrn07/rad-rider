@@ -40,10 +40,24 @@
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        <span>&copy; @DateTime.Now.Year – Todos os direitos reservados a Daniel Nascimento</span>
+
+
+<footer class="footer text-muted">
+    <div class="bg-dark pt-5 d-flex">
+        <div class="container">
+            <h2 class="text-light text-uppercase m-0">
+                Institucional
+            </h2>
+            
+            <a class="nav-link p-0 text-white" asp-area="" asp-page="/AboutUs">Sobre nós</a>
+        </div>
     </div>
+    <div class="bg-dark"  style="opacity: 0.95;">
+        <div class="container">
+                <span>&copy; @DateTime.Now.Year – Todos os direitos reservados a Daniel Nascimento</span>
+            </div>
+    </div>
+    
 </footer>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
