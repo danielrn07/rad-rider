@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Início";
 }
 
 @* BANNER *@
@@ -11,3 +11,18 @@
 </section>
 @* /BANNER *@
 
+@* SKATE CARD *@
+<div class="row justify-content-md-center">
+    @foreach (var skate in Model.SkateList)
+    {
+        <div class="card col-3 m-3">
+            <img src="@skate.ImagePath" class="p-3" style="border-radius: 25px">
+            <div class="card-body">
+                <h5 class="card-title">@skate.Name</h5>
+                <p class="card-text">@skate.Price</p>
+                <a class="btn-buy btn-primary text-uppercase">Comprar</a>
+            </div>
+        </div>
+    }
+</div>
+@* /SKATE CARD *@
