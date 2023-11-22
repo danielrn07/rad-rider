@@ -6,10 +6,15 @@ namespace RadRiderWebApp.Pages;
 
 public class IndexModel : PageModel
 {
+    private ISkateService _service;
+
+    public IndexModel(ISkateService service)
+    {
+        _service = service;
+    }
     public IList<Skate> SkateList { get; set; }
     public void OnGet()
     {
-        var service = new SkateService();
-        SkateList = service.GetAll();
+        SkateList = _service.GetAll();
     }
 }

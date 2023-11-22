@@ -1,4 +1,5 @@
 ﻿@page
+@using RadRiderWebApp.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Início";
@@ -22,6 +23,7 @@
                 <p class="card-text">@Html.DisplayFor(model => skate.Price)</p>
                 <a class="btn-buy btn-primary text-uppercase"
                    asp-page="/SkateDetails"
+                   asp-route-slug="@skate.NameSlug"
                    asp-route-id="@skate.Id"
                    >Comprar</a>
             </div>

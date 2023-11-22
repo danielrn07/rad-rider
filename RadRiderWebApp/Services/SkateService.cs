@@ -2,11 +2,16 @@ using RadRiderWebApp.Models;
 
 namespace RadRiderWebApp.Services;
 
-public class SkateService
+public class SkateService : ISkateService
 {
-    public IList<Skate> GetAll()
+    public SkateService()
+        => LoadInitialList();
+    
+    private IList<Skate> _skates;
+
+    private void LoadInitialList()
     {
-        return new List<Skate>()
+        _skates = new List<Skate>()
         {
             new Skate
             {
@@ -74,8 +79,17 @@ public class SkateService
             }
         };
     }
-
+    
+    public IList<Skate> GetAll()
+        => _skates;
+    
     public Skate GetSkate(int id)
         => GetAll().SingleOrDefault(skate => skate.Id == id);
-  
+
+    public void InsertSkate(Skate skate)
+    {
+        var nextId = _skates.Max(item => item.Id) + 1;
+        skate.Id = nextId;
+        _skates.Add(skate);
+    }
 }

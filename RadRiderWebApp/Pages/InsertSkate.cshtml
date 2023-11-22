@@ -1,0 +1,93 @@
+@page
+@model RadRiderWebApp.Pages.InsertSkateModel
+
+@{
+    ViewData["Title"] = "Adicionar Skate";
+}
+
+<section class="container">
+    <div class="row pt-5">
+        <div class="col-md-4">
+            <form method="post">
+                <h4>Inclusão de Hamburguer</h4>
+                <hr/>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Skate.Name" class="control-label"></label>
+                    <input asp-for="Skate.Name" class="form-control"/>
+                    <span asp-validation-for="Skate.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.Description" class="control-label"></label>
+                    <input asp-for="Skate.Description" class="form-control"/>
+                    <span asp-validation-for="Skate.Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.ImagePath" class="control-label"></label>
+                    <input asp-for="Skate.ImagePath" class="form-control"/>
+                    <span asp-validation-for="Skate.ImagePath" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.Size" class="control-label"></label>
+                    <input asp-for="Skate.Size" class="form-control"/>
+                    <span asp-validation-for="Skate.Size" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.Model" class="control-label"></label>
+                    <input asp-for="Skate.Model" class="form-control"/>
+                    <span asp-validation-for="Skate.Model" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.Category" class="control-label"></label>
+                    <input asp-for="Skate.Category" class="form-control"/>
+                    <span asp-validation-for="Skate.Category" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.Brand" class="control-label"></label>
+                    <input asp-for="Skate.Brand" class="form-control"/>
+                    <span asp-validation-for="Skate.Brand" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.Amount" class="control-label"></label>
+                    <input asp-for="Skate.Amount" class="form-control"/>
+                    <span asp-validation-for="Skate.Amount" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.Price" class="control-label"></label>
+                    <input asp-for="Skate.Price" class="form-control"/>
+                    <span asp-validation-for="Skate.Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3 mb-3">
+                    <input class="form-check-input" asp-for="Skate.LimitedEdition"/>
+                    <label asp-for="Skate.LimitedEdition"></label>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Skate.ManufacturingDate" class="control-label"></label>
+                    <input asp-for="Skate.ManufacturingDate" class="form-control"/>
+                    <span asp-validation-for="Skate.ManufacturingDate" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group mt-4">
+                    <input type="submit" value="Salvar" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
