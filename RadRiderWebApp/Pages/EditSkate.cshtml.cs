@@ -5,16 +5,17 @@ using RadRiderWebApp.Services;
 
 namespace RadRiderWebApp.Pages;
 
-public class SkateDetailsModel : PageModel
+public class EditSkateModel : PageModel
 {
     private ISkateService _service;
-    
-    public SkateDetailsModel(ISkateService service)
+
+    public EditSkateModel(ISkateService service)
     {
         _service = service;
     }
     
-    public Skate Skate { get; private set; }
+    [BindProperty]
+    public Skate Skate { get; set; }
     
     public IActionResult OnGet(int id)
     {
@@ -26,5 +27,18 @@ public class SkateDetailsModel : PageModel
         }
 
         return Page();
+    }
+    
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+        
+        _service.EditSkate(Skate);
+
+        return RedirectToPage("/Index");
+
     }
 }

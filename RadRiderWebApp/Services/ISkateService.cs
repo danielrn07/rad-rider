@@ -7,4 +7,5 @@ public interface ISkateService
     IList<Skate> GetAll();
     Skate GetSkate(int id);
     void InsertSkate(Skate skate);
+    void EditSkate(Skate skate);
 }

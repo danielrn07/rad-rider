@@ -92,4 +92,20 @@ public class SkateService : ISkateService
         skate.Id = nextId;
         _skates.Add(skate);
     }
+
+    public void EditSkate(Skate skate)
+    {
+        var skateFound = _skates.SingleOrDefault(item => item.Id == skate.Id);
+        skateFound.Name = skate.Name;
+        skateFound.Description = skate.Description;
+        skateFound.ImagePath = skate.ImagePath;
+        skateFound.Size = skate.Size;
+        skateFound.Model = skate.Model;
+        skateFound.Category = skate.Category;
+        skateFound.Brand = skate.Brand;
+        skateFound.Amount = skate.Amount;
+        skateFound.Price = skate.Price;
+        skateFound.LimitedEdition = skate.LimitedEdition;
+        skateFound.ManufacturingDate = skate.ManufacturingDate;
+    }
 }

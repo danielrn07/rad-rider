@@ -17,6 +17,18 @@ public class InsertSkateModel : PageModel
     [BindProperty]
     public Skate Skate { get; set; }
     
+    public IActionResult OnGet(int id)
+    {
+        Skate = _service.GetSkate(id);
+
+        if (Skate == null)
+        {
+            return NotFound();
+        }
+
+        return Page();
+    }
+    
     public IActionResult OnPost()
     {
         if (!ModelState.IsValid)
