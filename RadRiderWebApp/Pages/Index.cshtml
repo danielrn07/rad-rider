@@ -19,8 +19,11 @@
             <img src="@skate.ImagePath" class="p-3" style="border-radius: 25px">
             <div class="card-body">
                 <h5 class="card-title">@skate.Name</h5>
-                <p class="card-text">@skate.Price</p>
-                <a class="btn-buy btn-primary text-uppercase">Comprar</a>
+                <p class="card-text">@Html.DisplayFor(model => skate.Price)</p>
+                <a class="btn-buy btn-primary text-uppercase"
+                   asp-page="/SkateDetails"
+                   asp-route-id="@skate.Id"
+                   >Comprar</a>
             </div>
         </div>
     }

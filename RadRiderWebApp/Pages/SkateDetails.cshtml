@@ -1,0 +1,49 @@
+@page
+@model RadRiderWebApp.Pages.SkateDetailsModel
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<section class="container">
+    <h2 class="my-3">@Model.Skate.Name</h2>
+    <div class="row">
+        <div class="col-4">
+            <img class="img-fluid rounded" src="@Model.Skate.ImagePath">
+        </div>
+        <div class="col-6">
+            <h4 class="my-3">Sobre:</h4>
+            <p>@Model.Skate.Description</p>
+            <h4 class="my-3">Mais Info:</h4>
+            <ul>
+                <li>
+                    <label asp-for="Skate.Price"></label>:
+                    @Html.DisplayFor(model => model.Skate.Price)
+                </li>
+                <li>
+                    <label asp-for="Skate.Size"></label>:
+                    @Model.Skate.Size
+                </li>
+                <li>
+                    <label asp-for="Skate.Model"></label>:
+                    @Model.Skate.Model
+                </li>
+                <li>
+                    <label asp-for="Skate.Category"></label>:
+                    @Model.Skate.Category
+                </li>
+                <li>
+                    <label asp-for="Skate.Brand"></label>:
+                    @Model.Skate.Brand
+                </li>
+                <li>
+                    @Model.Skate.LimitedEditionFormatted
+                </li>
+                <li>
+                    <label asp-for="Skate.ManufacturingDate"></label>:
+                    @Html.DisplayFor(model => model.Skate.ManufacturingDate)
+                </li>
+            </ul>
+            <a class="btn my-3 btn-primary">Editar</a>
+        </div>
+    </div>
+</section>
