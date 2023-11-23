@@ -108,4 +108,10 @@ public class SkateService : ISkateService
         skateFound.LimitedEdition = skate.LimitedEdition;
         skateFound.ManufacturingDate = skate.ManufacturingDate;
     }
+
+    public void DeleteSkate(int id)
+    {
+        var skateFound = GetSkate(id);
+        _skates.Remove(skateFound);
+    }
 }

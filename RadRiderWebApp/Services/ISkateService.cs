@@ -8,4 +8,5 @@ public interface ISkateService
     Skate GetSkate(int id);
     void InsertSkate(Skate skate);
     void EditSkate(Skate skate);
+    void DeleteSkate(int id);
 }

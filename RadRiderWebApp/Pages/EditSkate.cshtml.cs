@@ -41,4 +41,10 @@ public class EditSkateModel : PageModel
         return RedirectToPage("/Index");
 
     }
+
+    public IActionResult OnPostDelete()
+    {
+        _service.DeleteSkate(Skate.Id);
+        return RedirectToPage("/Index");
+    }
 }
