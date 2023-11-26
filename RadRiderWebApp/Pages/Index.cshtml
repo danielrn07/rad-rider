@@ -13,21 +13,47 @@
 @* /BANNER *@
 
 @* SKATE CARD *@
-<div class="row justify-content-md-center">
-    @foreach (var skate in Model.SkateList)
-    {
-        <div class="card col-3 m-3">
-            <img src="@skate.ImagePath" class="p-3" style="border-radius: 25px">
-            <div class="card-body">
-                <h5 class="card-title">@skate.Name</h5>
-                <p class="card-text">@Html.DisplayFor(model => skate.Price)</p>
-                <a class="btn-buy btn-primary text-uppercase"
-                   asp-page="/SkateDetails"
-                   asp-route-slug="@skate.NameSlug"
-                   asp-route-id="@skate.Id"
-                   >Comprar</a>
-            </div>
-        </div>
-    }
-</div>
+@* <div class="row justify-content-md-center"> *@
+@*     @foreach (var skate in Model.SkateList) *@
+@*     { *@
+@*         <div class="card col-3 m-3"> *@
+@*             <img src="@skate.ImagePath" class="p-3" style="border-radius: 25px"> *@
+@*             <div class="card-body"> *@
+@*                 <h5 class="card-title">@skate.Name</h5> *@
+@*                 <p class="card-text">@Html.DisplayFor(model => skate.Price)</p> *@
+@*                 <a class="btn-buy btn-primary text-uppercase" *@
+@*                    asp-page="/SkateDetails" *@
+@*                    asp-route-slug="@skate.NameSlug" *@
+@*                    asp-route-id="@skate.Id" *@
+@*                    >Comprar</a> *@
+@*             </div> *@
+@*         </div> *@
+@*     } *@
+@* </div> *@
+
+<section class="container">
+    <div class="row justify-content-center" style="gap: 1rem; margin-top: 64px;">
+        @foreach (var skate in Model.SkateList)
+            {
+                <div class="d-flex flex-column">
+                    <div class="card-item d-flex flex-wrap">
+                        <div class="card-img">
+                            <img src="@skate.ImagePath" alt=""/>
+                        </div>
+                        <a
+                            class="card-button"
+                            asp-page="/SkateDetails"
+                            asp-route-slug="@skate.NameSlug"
+                            asp-route-id="@skate.Id">
+                            Detalhes
+                        </a>
+                    </div>
+                    <p style="margin-top: 24px; font-size: 16px; text-transform: uppercase;">@skate.Name</p>
+                    <p style="font-size:  24px; font-weight: bold;">@Html.DisplayFor(model => skate.Price)</p>
+                </div>
+                
+            }
+    </div>
+</section>
+
 @* /SKATE CARD *@

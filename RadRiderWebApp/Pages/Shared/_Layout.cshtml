@@ -39,33 +39,33 @@
     </div>
 </header>
 <div class="">
-    <main role="main" class="pb-3">
+    <main role="main" style="margin-bottom: 64px;">
         @RenderBody()
     </main>
 </div>
 
 <footer class="footer text-muted">
     <div class="bg-dark">
-        <div class="container py-5 d-flex">
+        <div class="container py-5 d-flex flex-wrap" style="gap: 4rem;">
             <div class="">
                 <h2 class="text-light text-uppercase m-0">
                     Institucional
                 </h2>
-                <a class="nav-link p-0 text-white mt-4" asp-area="" asp-page="/AboutUs">Sobre nós</a>
-                <a class="nav-link p-0 text-white mt-3" asp-area="" asp-page="/PrivacyPolicy">Política de Privacidade</a>
+                <a class="nav-link p-0 text-white mt-2" asp-area="" asp-page="/AboutUs">Sobre nós</a>
+                <a class="nav-link p-0 text-white mt-2" asp-area="" asp-page="/PrivacyPolicy">Política de Privacidade</a>
             </div>
-            <div class="ml-5">
+            <div class="">
                 <h2 class="text-light text-uppercase m-0">
                     Contato
                 </h2>
-                <p class="footer-text mt-4 p-0">contato@radrider.com</p>
-                <p class="footer-text mt-3 p-0">+55 (99) 99999-9999</p>
+                <p class="footer-text mt-2 p-0">contato@radrider.com</p>
+                <p class="footer-text mt-2 p-0">+55 (99) 99999-9999</p>
             </div>
         </div>
     </div>
 
     <div class="bg-dark py-3" style="opacity: 0.95;">
-        <div class="container">
+        <div class="container text-center text-sm-left">
             <span>
                 &copy; @DateTime.Now.Year – Todos os direitos reservados a Daniel Nascimento
             </span>

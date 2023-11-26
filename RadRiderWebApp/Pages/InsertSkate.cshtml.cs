@@ -21,7 +21,7 @@ public class InsertSkateModel : PageModel
     {
         Skate = _service.GetSkate(id);
 
-        if (Skate == null)
+        if (Skate != null)
         {
             return NotFound();
         }

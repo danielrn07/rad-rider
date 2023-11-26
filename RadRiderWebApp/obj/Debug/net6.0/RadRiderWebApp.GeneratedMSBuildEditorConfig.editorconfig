@@ -11,7 +11,7 @@ build_property.RootNamespace = RadRiderWebApp
 build_property.ProjectDir = /home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = /home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp
 build_property._RazorSourceGeneratorDebug = 
 
