@@ -13,24 +13,6 @@
 @* /BANNER *@
 
 @* SKATE CARD *@
-@* <div class="row justify-content-md-center"> *@
-@*     @foreach (var skate in Model.SkateList) *@
-@*     { *@
-@*         <div class="card col-3 m-3"> *@
-@*             <img src="@skate.ImagePath" class="p-3" style="border-radius: 25px"> *@
-@*             <div class="card-body"> *@
-@*                 <h5 class="card-title">@skate.Name</h5> *@
-@*                 <p class="card-text">@Html.DisplayFor(model => skate.Price)</p> *@
-@*                 <a class="btn-buy btn-primary text-uppercase" *@
-@*                    asp-page="/SkateDetails" *@
-@*                    asp-route-slug="@skate.NameSlug" *@
-@*                    asp-route-id="@skate.Id" *@
-@*                    >Comprar</a> *@
-@*             </div> *@
-@*         </div> *@
-@*     } *@
-@* </div> *@
-
 <section class="container">
     <div class="row justify-content-center" style="gap: 1rem; margin-top: 64px;">
         @foreach (var skate in Model.SkateList)
@@ -55,5 +37,4 @@
             }
     </div>
 </section>
-
 @* /SKATE CARD *@

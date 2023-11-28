@@ -1,5 +1,5 @@
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RadRiderWebApp.Models;
 
@@ -24,17 +24,22 @@ public class Skate
     [Display(Name = "Tamanho")]
     public double Size { get; set; }
     
-    [Required(ErrorMessage = "Campo 'Modelo' deve ser informado.")]
+    // [Required(ErrorMessage = "Campo 'Modelo' deve ser informado.")]
+    // [Display(Name = "Modelo")]
+    // public string Model { get; set; }
+    
     [Display(Name = "Modelo")]
-    public string Model { get; set; }
+    [ForeignKey("SkateModelId")]
+    public int? SkateModelId { get; set; }
     
     [Required(ErrorMessage = "Campo 'Categoria' deve ser informado.")]
     [Display(Name = "Categoria")]
     public string Category { get; set; }
     
-    [Required(ErrorMessage = "Campo 'Marca' deve ser informado.")]
     [Display(Name = "Marca")]
-    public string Brand { get; set; }
+    [ForeignKey("BrandId")]
+    public int? BrandId { get; set; }
+    
     public double ProductReview { get; set; }
     
     [Required(ErrorMessage = "Campo 'Quantidade' deve ser informado.")]

@@ -1,11 +1,14 @@
+using RadRiderWebApp.Data;
 using RadRiderWebApp.Services;
+using RadRiderWebApp.Services.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSingleton<ISkateService, SkateService>();
+builder.Services.AddTransient<ISkateService, SkateService>();
+builder.Services.AddDbContext<SkateDbContext>();
 
 var app = builder.Build();
 
