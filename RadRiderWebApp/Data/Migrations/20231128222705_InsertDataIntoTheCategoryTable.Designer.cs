@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RadRiderWebApp.Data;
 
@@ -10,9 +11,11 @@ using RadRiderWebApp.Data;
 namespace RadRiderWebApp.Data.Migrations
 {
     [DbContext(typeof(SkateDbContext))]
-    partial class SkateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231128222705_InsertDataIntoTheCategoryTable")]
+    partial class InsertDataIntoTheCategoryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.14");
@@ -59,8 +62,9 @@ namespace RadRiderWebApp.Data.Migrations
                     b.Property<int?>("BrandId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -97,8 +101,6 @@ namespace RadRiderWebApp.Data.Migrations
 
                     b.HasIndex("BrandId");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("SkateModelId");
 
                     b.ToTable("Skate");
@@ -125,21 +127,12 @@ namespace RadRiderWebApp.Data.Migrations
                         .WithMany("Skates")
                         .HasForeignKey("BrandId");
 
-                    b.HasOne("RadRiderWebApp.Models.Category", null)
-                        .WithMany("Skates")
-                        .HasForeignKey("CategoryId");
-
                     b.HasOne("RadRiderWebApp.Models.SkateModel", null)
                         .WithMany("Skates")
                         .HasForeignKey("SkateModelId");
                 });
 
             modelBuilder.Entity("RadRiderWebApp.Models.Brand", b =>
-                {
-                    b.Navigation("Skates");
-                });
-
-            modelBuilder.Entity("RadRiderWebApp.Models.Category", b =>
                 {
                     b.Navigation("Skates");
                 });

@@ -10,6 +10,7 @@ public class InsertSkateModel : PageModel
 {
     public SelectList BrandOptionItems { get; set; }
     public SelectList SkateModelOptionItems { get; set; }
+    public SelectList CategoryOptionItems { get; set; }
     private ISkateService _service;
     
     public InsertSkateModel(ISkateService service)
@@ -26,6 +27,10 @@ public class InsertSkateModel : PageModel
         SkateModelOptionItems = new SelectList(_service.GetAllModels(),
             nameof(SkateModel.SkateModelId),
             nameof(SkateModel.Name));
+        
+        CategoryOptionItems = new SelectList(_service.GetAllCategories(),
+            nameof(Category.CategoryId),
+            nameof(Category.Name));
     }
     
     [BindProperty]

@@ -24,6 +24,9 @@ public class SkateService : ISkateService
     public IList<SkateModel> GetAllModels()
         => _context.SkateModel.ToList();
 
+    public IList<Category> GetAllCategories()
+        => _context.Category.ToList();
+
     public Skate GetSkate(int id)
     {
         return _context.Skate.SingleOrDefault(skate => skate.Id == id);
@@ -43,7 +46,7 @@ public class SkateService : ISkateService
         skateFound.ImagePath = skate.ImagePath;
         skateFound.Size = skate.Size;
         skateFound.SkateModelId = skate.SkateModelId;
-        skateFound.Category = skate.Category;
+        skateFound.CategoryId = skate.CategoryId;
         skateFound.BrandId = skate.BrandId;
         skateFound.Amount = skate.Amount;
         skateFound.Price = skate.Price;

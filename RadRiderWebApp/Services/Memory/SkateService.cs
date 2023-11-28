@@ -157,6 +157,11 @@ public class SkateService : ISkateService
         throw new NotImplementedException();
     }
 
+    public IList<Category> GetAllCategories()
+    {
+        throw new NotImplementedException();
+    }
+
     public Skate GetSkate(int id)
         => GetAll().SingleOrDefault(skate => skate.Id == id);
 
@@ -175,7 +180,7 @@ public class SkateService : ISkateService
         skateFound.ImagePath = skate.ImagePath;
         skateFound.Size = skate.Size;
         skateFound.SkateModelId = skate.SkateModelId;
-        skateFound.Category = skate.Category;
+        skateFound.CategoryId = skate.CategoryId;
         skateFound.BrandId = skate.BrandId;
         skateFound.Amount = skate.Amount;
         skateFound.Price = skate.Price;

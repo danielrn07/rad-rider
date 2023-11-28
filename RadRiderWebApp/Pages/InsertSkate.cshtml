@@ -35,12 +35,6 @@
                     <input asp-for="Skate.Size" class="form-control"/>
                     <span asp-validation-for="Skate.Size" class="text-danger"></span>
                 </div>
-
-                @* <div class="form-group"> *@
-                @*     <label asp-for="Skate.Model" class="control-label"></label> *@
-                @*     <input asp-for="Skate.Model" class="form-control"/> *@
-                @*     <span asp-validation-for="Skate.Model" class="text-danger"></span> *@
-                @* </div> *@
                 
                 <div class="form-group">
                     <label asp-for="Skate.SkateModelId" class="control-label"></label>
@@ -48,18 +42,13 @@
                         <option value="">Selecione uma opção</option>
                     </select>
                 </div>
-
+                
                 <div class="form-group">
-                    <label asp-for="Skate.Category" class="control-label"></label>
-                    <input asp-for="Skate.Category" class="form-control"/>
-                    <span asp-validation-for="Skate.Category" class="text-danger"></span>
+                    <label asp-for="Skate.CategoryId" class="control-label"></label>
+                    <select class="form-select" asp-for="Skate.CategoryId" asp-items="Model.CategoryOptionItems">
+                        <option value="">Selecione uma opção</option>
+                    </select>
                 </div>
-
-                @* <div class="form-group"> *@
-                @*     <label asp-for="Skate.Brand" class="control-label"></label> *@
-                @*     <input asp-for="Skate.Brand" class="form-control"/> *@
-                @*     <span asp-validation-for="Skate.Brand" class="text-danger"></span> *@
-                @* </div> *@
                 
                 <div class="form-group">
                     <label asp-for="Skate.BrandId" class="control-label"></label>
@@ -90,7 +79,6 @@
                     <input asp-for="Skate.ManufacturingDate" class="form-control"/>
                     <span asp-validation-for="Skate.ManufacturingDate" class="text-danger"></span>
                 </div>
-
 
                 <div class="form-group mt-4">
                     <input type="submit" value="Salvar" class="btn btn-primary"/>

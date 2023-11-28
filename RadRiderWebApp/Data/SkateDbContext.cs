@@ -8,6 +8,7 @@ public class SkateDbContext : DbContext
     public DbSet<Skate> Skate { get; set; }
     public DbSet<Brand> Brand { get; set; }
     public DbSet<SkateModel> SkateModel { get; set; }
+    public DbSet<Category> Category { get; set; }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
