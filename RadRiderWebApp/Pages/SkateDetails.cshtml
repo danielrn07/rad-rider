@@ -23,24 +23,68 @@
                     <label asp-for="Skate.Size"></label>:
                     @Model.Skate.Size
                 </li>
-                <li>
-                    <label asp-for="Skate.SkateModelId"></label>:
-                    @Model.Skate.SkateModelId
-                </li>
-                <li>
-                    <label asp-for="Skate.CategoryId"></label>:
-                    @Model.Skate.CategoryId
-                </li>
-                <li>
-                    <label asp-for="Skate.BrandId"></label>:
-                    @Model.Skate.BrandId
-                </li>
+                
+                @if (Model.SkateModelName is not null)
+                {
+                    <li>
+                        <label asp-for="Skate.SkateModelId"></label>:
+                        @Html.DisplayFor(model => model.SkateModelName)
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <label asp-for="Skate.SkateModelId"></label>:
+                        Genérico
+                    </li>
+                    
+                }
+                
+                @if (Model.CategoryName is not null)
+                {
+                    <li>
+                        <label asp-for="Skate.CategoryId"></label>:
+                        @Html.DisplayFor(model => model.CategoryName)
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <label asp-for="Skate.CategoryId"></label>:
+                        Genérica
+                    </li>
+                }
+                
+                @if (Model.BrandName is not null)
+                {
+                    <li>
+                        <label asp-for="Skate.BrandId"></label>:
+                        @Html.DisplayFor(model => model.BrandName)
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <label asp-for="Skate.BrandId"></label>:
+                        Genérica
+                    </li>
+                }
+                
                 <li>
                     @Model.Skate.LimitedEditionFormatted
                 </li>
+                
+                @{
+                    DateTime currentDate = DateTime.Now;
+                    DateTime manufacturingDate = Model.Skate.ManufacturingDate;
+                    bool isNewProduct = manufacturingDate.Month == currentDate.Month &&
+                                        manufacturingDate.Year == currentDate.Year;
+                }
+                 @* class="@(isNewProduct ? "Produto Novo" : "")" *@
                 <li>
                     <label asp-for="Skate.ManufacturingDate"></label>:
-                    @Html.DisplayFor(model => model.Skate.ManufacturingDate)
+                    @* @Html.DisplayFor(model => ) *@
+                    <span>@(isNewProduct ? "Produto Novo" : "")</span>
                 </li>
             </ul>
             <a class="btn my-3 btn-primary" asp-area="" asp-page="/EditSkate" asp-route-id="@Model.Skate.Id">Editar</a>

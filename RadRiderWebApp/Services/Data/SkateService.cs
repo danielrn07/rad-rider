@@ -19,13 +19,22 @@ public class SkateService : ISkateService
 
     public IList<Brand> GetAllBrands()
         => _context.Brand.ToList();
-    
-    
+
+    public Brand GetBrand(int id)
+        => _context.Brand.SingleOrDefault(brand => brand.BrandId == id);
+
+
     public IList<SkateModel> GetAllModels()
         => _context.SkateModel.ToList();
 
+    public SkateModel GetSkateModel(int id)
+        => _context.SkateModel.SingleOrDefault(skateModel => skateModel.SkateModelId == id);
+
     public IList<Category> GetAllCategories()
         => _context.Category.ToList();
+
+    public Category GetCategory(int id)
+        => _context.Category.SingleOrDefault(category => category.CategoryId == id);
 
     public Skate GetSkate(int id)
     {

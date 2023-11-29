@@ -28,10 +28,6 @@ public class Skate
     [ForeignKey("SkateModelId")]
     public int? SkateModelId { get; set; }
     
-    // [Required(ErrorMessage = "Campo 'Categoria' deve ser informado.")]
-    // [Display(Name = "Categoria")]
-    // public string Category { get; set; }
-    
     [Display(Name = "Categoria")]
     public int? CategoryId { get; set; }
     

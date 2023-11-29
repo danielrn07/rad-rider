@@ -152,12 +152,27 @@ public class SkateService : ISkateService
         throw new NotImplementedException();
     }
 
+    public Brand GetBrand(int id)
+    {
+        throw new NotImplementedException();
+    }
+
     public IList<SkateModel> GetAllModels()
     {
         throw new NotImplementedException();
     }
 
+    public SkateModel GetSkateModel(int id)
+    {
+        throw new NotImplementedException();
+    }
+
     public IList<Category> GetAllCategories()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Category GetCategory(int id)
     {
         throw new NotImplementedException();
     }
