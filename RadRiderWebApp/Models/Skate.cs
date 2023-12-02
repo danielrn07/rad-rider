@@ -1,3 +1,4 @@
+using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,7 +9,7 @@ public class Skate
     public int Id { get; set; }
     
     [Display(Name = "Nome")]
-    [StringLength(50, ErrorMessage = "Campo 'Nome' deve ter no maximo 50 caracteres.")]
+    [StringLength(200, ErrorMessage = "Campo 'Nome' deve ter no maximo 200 caracteres.")]
     [Required(ErrorMessage = "Campo 'Nome' deve ser informado.")]
     public string Name { get; set; }
     public string NameSlug => Name.ToLower().Replace(" ", "-");
@@ -37,7 +38,9 @@ public class Skate
     
     public double ProductReview { get; set; }
     
+    [Display(Name = "Quantidade")]
     [Required(ErrorMessage = "Campo 'Quantidade' deve ser informado.")]
+    [Range(0, int.MaxValue, ErrorMessage="A quantidade deve ser maior ou igual a zero.")]
     public int Amount { get; set; }
     
     [Required(ErrorMessage = "Campo 'Preço' deve ser informado.")]
@@ -45,14 +48,16 @@ public class Skate
     [DataType(DataType.Currency)]
     public double Price { get; set; }
     
-    public bool LimitedEdition { get; set; }
-
-    public string LimitedEditionFormatted =>
-        LimitedEdition ? "Este produto é edição limitada" : "Este produto não é edição limitada";
+    // public bool LimitedEdition { get; set; }
+    //
+    // public string LimitedEditionFormatted =>
+    //     LimitedEdition ? "Este produto é edição limitada" : "Este produto não é edição limitada";
     
     [Required(ErrorMessage = "Campo 'Data de fabricação' deve ser informado.")]
     [DataType("month")]
     [Display(Name = "Data de fabricação")]
     [DisplayFormat(DataFormatString = "{0:MM/yyyy}")]
     public DateTime ManufacturingDate { get; set; }
+
+    public ICollection<Tag>? Tags { get; set; }
 }

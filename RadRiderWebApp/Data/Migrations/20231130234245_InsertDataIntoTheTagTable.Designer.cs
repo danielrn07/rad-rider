@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RadRiderWebApp.Data;
 
@@ -10,9 +11,11 @@ using RadRiderWebApp.Data;
 namespace RadRiderWebApp.Data.Migrations
 {
     [DbContext(typeof(SkateDbContext))]
-    partial class SkateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231130234245_InsertDataIntoTheTagTable")]
+    partial class InsertDataIntoTheTagTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.14");
@@ -70,12 +73,15 @@ namespace RadRiderWebApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("LimitedEdition")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("ManufacturingDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(200)
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Price")
@@ -122,28 +128,13 @@ namespace RadRiderWebApp.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("TagId");
 
                     b.ToTable("Tag");
-                });
-
-            modelBuilder.Entity("SkateTag", b =>
-                {
-                    b.Property<int>("SkatesId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TagsTagId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("SkatesId", "TagsTagId");
-
-                    b.HasIndex("TagsTagId");
-
-                    b.ToTable("SkateTag");
                 });
 
             modelBuilder.Entity("RadRiderWebApp.Models.Skate", b =>
@@ -159,21 +150,6 @@ namespace RadRiderWebApp.Data.Migrations
                     b.HasOne("RadRiderWebApp.Models.SkateModel", null)
                         .WithMany("Skates")
                         .HasForeignKey("SkateModelId");
-                });
-
-            modelBuilder.Entity("SkateTag", b =>
-                {
-                    b.HasOne("RadRiderWebApp.Models.Skate", null)
-                        .WithMany()
-                        .HasForeignKey("SkatesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RadRiderWebApp.Models.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsTagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("RadRiderWebApp.Models.Brand", b =>

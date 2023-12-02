@@ -10,6 +10,7 @@ public interface ISkateService
     IList<SkateModel> GetAllModels();
     SkateModel GetSkateModel(int id);
     IList<Category> GetAllCategories();
+    IList<Tag> GetAllTags();
     Category GetCategory(int id);
     Skate GetSkate(int id);
     void InsertSkate(Skate skate);

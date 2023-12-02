@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RadRiderWebApp.Data;
 
@@ -10,9 +11,11 @@ using RadRiderWebApp.Data;
 namespace RadRiderWebApp.Data.Migrations
 {
     [DbContext(typeof(SkateDbContext))]
-    partial class SkateDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231201025627_AddSkateTagRelationship")]
+    partial class AddSkateTagRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.14");
@@ -70,12 +73,15 @@ namespace RadRiderWebApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("LimitedEdition")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("ManufacturingDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(200)
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Price")

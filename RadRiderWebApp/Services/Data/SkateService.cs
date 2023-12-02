@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using RadRiderWebApp.Data;
 using RadRiderWebApp.Models;
 
@@ -33,12 +34,17 @@ public class SkateService : ISkateService
     public IList<Category> GetAllCategories()
         => _context.Category.ToList();
 
+    public IList<Tag> GetAllTags()
+        => _context.Tag.ToList();
+
     public Category GetCategory(int id)
         => _context.Category.SingleOrDefault(category => category.CategoryId == id);
 
     public Skate GetSkate(int id)
     {
-        return _context.Skate.SingleOrDefault(skate => skate.Id == id);
+        return _context.Skate
+            .Include(skate => skate.Tags)
+            .SingleOrDefault(skate => skate.Id == id);
     }
 
     public void InsertSkate(Skate skate)
@@ -59,8 +65,8 @@ public class SkateService : ISkateService
         skateFound.BrandId = skate.BrandId;
         skateFound.Amount = skate.Amount;
         skateFound.Price = skate.Price;
-        skateFound.LimitedEdition = skate.LimitedEdition;
         skateFound.ManufacturingDate = skate.ManufacturingDate;
+        skateFound.Tags = skate.Tags;
         _context.SaveChanges();
     }
 
