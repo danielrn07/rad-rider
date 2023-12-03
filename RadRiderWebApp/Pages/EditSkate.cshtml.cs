@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NToastNotify;
 using RadRiderWebApp.Models;
 using RadRiderWebApp.Services;
 
@@ -13,10 +14,12 @@ public class EditSkateModel : PageModel
     public SelectList CategoryOptionItems { get; set; }
     public SelectList TagOptionItems { get; set; }
     private ISkateService _service;
+    private IToastNotification _toastNotification;
 
-    public EditSkateModel(ISkateService service)
+    public EditSkateModel(ISkateService service, IToastNotification toastNotification)
     {
         _service = service;
+        _toastNotification = toastNotification;
     }
     
     [BindProperty]
@@ -67,15 +70,32 @@ public class EditSkateModel : PageModel
         {
             return Page();
         }
-    
-        _service.EditSkate(Skate);
+
+        try
+        {
+            _service.EditSkate(Skate);
+            _toastNotification.AddSuccessToastMessage("Skate editado com sucesso.");
+        }
+        catch (Exception e)
+        {
+            _toastNotification.AddErrorToastMessage("Não foi possível editar o skate. Tente novamente.");
+        }
 
         return RedirectToPage("/Index");
     }
 
     public IActionResult OnPostDelete()
     {
-        _service.DeleteSkate(Skate.Id);
+        try
+        {
+            _service.DeleteSkate(Skate.Id);
+            _toastNotification.AddSuccessToastMessage("Skate deletado com sucesso.");
+        }
+        catch (Exception e)
+        {
+            _toastNotification.AddErrorToastMessage("Não foi possível remover o skate. Tente novamente.");
+        }
+        
         return RedirectToPage("/Index");
     }
 }

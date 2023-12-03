@@ -48,11 +48,6 @@ public class Skate
     [DataType(DataType.Currency)]
     public double Price { get; set; }
     
-    // public bool LimitedEdition { get; set; }
-    //
-    // public string LimitedEditionFormatted =>
-    //     LimitedEdition ? "Este produto é edição limitada" : "Este produto não é edição limitada";
-    
     [Required(ErrorMessage = "Campo 'Data de fabricação' deve ser informado.")]
     [DataType("month")]
     [Display(Name = "Data de fabricação")]

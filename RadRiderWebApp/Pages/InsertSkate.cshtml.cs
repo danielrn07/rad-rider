@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NToastNotify;
 using RadRiderWebApp.Models;
 using RadRiderWebApp.Services;
 
@@ -13,10 +14,12 @@ public class InsertSkateModel : PageModel
     public SelectList CategoryOptionItems { get; set; }
     public SelectList TagOptionItems { get; set; }
     private ISkateService _service;
+    private IToastNotification _toastNotification;
     
-    public InsertSkateModel(ISkateService service)
+    public InsertSkateModel(ISkateService service, IToastNotification toastNotification)
     {
         _service = service;
+        _toastNotification = toastNotification;
     }
     
     public void OnGet()
@@ -56,8 +59,17 @@ public class InsertSkateModel : PageModel
         {
             return Page();
         }
-    
-        _service.InsertSkate(Skate);
+
+        try
+        {
+            _service.InsertSkate(Skate);
+            _toastNotification.AddSuccessToastMessage("Skate adicionado com sucesso.");
+        }
+        catch (Exception e)
+        {
+            _toastNotification.AddErrorToastMessage("Não foi possível adicionar o skate. Tente novamente.");
+        }
+        
     
         return RedirectToPage("/Index");
     }

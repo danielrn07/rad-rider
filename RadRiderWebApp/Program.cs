@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NToastNotify;
 using RadRiderWebApp.Data;
 using RadRiderWebApp.Services;
 using RadRiderWebApp.Services.Data;
@@ -6,7 +7,11 @@ using RadRiderWebApp.Services.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
+{
+    ProgressBar = true,
+    PositionClass = ToastPositions.TopRight
+});
 
 builder.Services.AddTransient<ISkateService, SkateService>();
 builder.Services.AddDbContext<SkateDbContext>();
@@ -28,6 +33,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseNToastNotify();
 
 app.UseAuthorization();
 
