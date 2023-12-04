@@ -5,83 +5,85 @@
 }
 
 <section class="container">
-    <h2 class="my-3">@Model.Skate.Name</h2>
+    <h2 class="my-3" style="font-size: 24px; text-align: center;">@Model.Skate.Name</h2>
+    
     <div class="row">
-        <div class="col-4">
+        <div class="col-sm-12 col-lg-6 text-center mb-4 mb-lg-0">
             <img class="img-fluid rounded" src="@Model.Skate.ImagePath">
+            <a
+                class="card-button btn" style="position: initial; color:  white; margin-top: 12px;">
+                Comprar
+            </a>
         </div>
-        <div class="col-6">
-            <h4 class="my-3">Sobre:</h4>
-            <p>@Model.Skate.Description</p>
-            <h4 class="my-3">Mais Info:</h4>
-            <ul>
-                <li>
-                    <label asp-for="Skate.Price"></label>:
-                    @Html.DisplayFor(model => model.Skate.Price)
-                </li>
-                <li>
-                    <label asp-for="Skate.Size"></label>:
+        
+        <div class="col-sm-12 col-lg-6">
+            <div style="font-size: 24px; font-weight: bold; color: var(--primary);">
+                @Html.DisplayFor(model => model.Skate.Price)
+            </div>
+            
+            <div class="mt-2" style="font-weight: bold">
+                <label asp-for="Skate.Size"></label>:
+                <div style="background-color: var(--dark); padding: 10px; width: 50px; color: white; display: flex; justify-content: center; align-items: center;">
                     @Model.Skate.Size
-                </li>
-                
-                @if (Model.SkateModelName is not null)
-                {
-                    <li>
-                        <label asp-for="Skate.SkateModelId"></label>:
-                        @Html.DisplayFor(model => model.SkateModelName)
-                    </li>
-                }
-                else
-                {
-                    <li>
-                        <label asp-for="Skate.SkateModelId"></label>:
-                        Genérico
-                    </li>
-                    
-                }
-                
-                @if (Model.CategoryName is not null)
-                {
-                    <li>
-                        <label asp-for="Skate.CategoryId"></label>:
-                        @Html.DisplayFor(model => model.CategoryName)
-                    </li>
-                }
-                else
-                {
-                    <li>
-                        <label asp-for="Skate.CategoryId"></label>:
-                        Genérica
-                    </li>
-                }
-                
-                @if (Model.BrandName is not null)
-                {
-                    <li>
-                        <label asp-for="Skate.BrandId"></label>:
-                        @Html.DisplayFor(model => model.BrandName)
-                    </li>
-                }
-                else
-                {
-                    <li>
-                        <label asp-for="Skate.BrandId"></label>:
-                        Genérica
-                    </li>
-                }
-                
-                @{
-                    DateTime currentDate = DateTime.Now;
-                    DateTime manufacturingDate = Model.Skate.ManufacturingDate;
-                    bool isNewProduct = manufacturingDate.Month == currentDate.Month &&
-                                        manufacturingDate.Year == currentDate.Year;
-                }
-                <li>
-                    <label asp-for="Skate.ManufacturingDate"></label>:
-                    <span>@(isNewProduct ? "Produto Novo" : "")</span>
-                </li>
-            </ul>
-            <a class="btn my-3 btn-primary" asp-area="" asp-page="/EditSkate" asp-route-id="@Model.Skate.Id">Editar</a>
+                </div>
+            </div>
+            
+            <p class="mt-3" style="font-size: 16px;">@Model.Skate.Description</p>
+            
+            <a class="btn mt-3 btn-primary" asp-area="" asp-page="/EditSkate" asp-route-id="@Model.Skate.Id">Editar</a>
         </div>
     </div>
+    
+    <h2 style="color: var(--dark); font-size: 24px; text-align: center; display: flex; justify-content: center; align-items: center; margin: 24px 0;">
+        Mais informações:
+    </h2>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td style="vertical-align: middle; font-weight: bold;">
+                <label asp-for="Skate.SkateModelId"></label>:
+            </td>
+            <td class="align-middle">
+                @if (Model.SkateModelName is not null)
+                {
+                    @Html.DisplayFor(model => model.SkateModelName)
+                }
+                else
+                {
+                    <p>Genérico</p>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="align-middle" style="font-weight: bold">
+                <label asp-for="Skate.CategoryId"></label>:
+            </td>
+            <td class="align-middle">
+                @if (Model.CategoryName is not null)
+                {
+                    @Html.DisplayFor(model => model.CategoryName)
+                }
+                else
+                {
+                    <p>Genérica</p>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="align-middle" style="font-weight: bold">
+                <label asp-for="Skate.BrandId"></label>:
+            </td>
+            <td class="align-middle">
+                @if (Model.BrandName is not null)
+                {
+                    @Html.DisplayFor(model => model.BrandName)
+                }
+                else
+                {
+                    <p>Genérica</p>
+                }
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </section>

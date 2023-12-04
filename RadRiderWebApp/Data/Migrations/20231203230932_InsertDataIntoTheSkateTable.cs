@@ -46,7 +46,7 @@ namespace RadRiderWebApp.Data.Migrations
                     ProductReview = 4.5,
                     Amount = 20,
                     Price = 129.99,
-                    ManufacturingDate = DateTime.Now.AddMonths(-4)
+                    ManufacturingDate = DateTime.Now
                 },
                 new Skate
                 {
@@ -74,7 +74,7 @@ namespace RadRiderWebApp.Data.Migrations
                     ProductReview = 4.8,
                     Amount = 25,
                     Price = 149.99,
-                    ManufacturingDate = DateTime.Now
+                    ManufacturingDate = DateTime.Now.AddMonths(-4)
                 },
                 new Skate
                 {
@@ -116,7 +116,7 @@ namespace RadRiderWebApp.Data.Migrations
                     ProductReview = 4.2,
                     Amount = 19,
                     Price = 299.99,
-                    ManufacturingDate = DateTime.Now.AddMonths(-8)
+                    ManufacturingDate = DateTime.Now
                 },
                 new Skate
                 {
@@ -186,7 +186,7 @@ namespace RadRiderWebApp.Data.Migrations
                     ProductReview = 4.5,
                     Amount = 14,
                     Price = 249.99,
-                    ManufacturingDate = DateTime.Now
+                    ManufacturingDate = DateTime.Now.AddMonths(-8)
                 }
             };
         }

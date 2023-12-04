@@ -19,6 +19,18 @@
             {
                 <div class="d-flex flex-column">
                     <div class="card-item d-flex flex-wrap">
+                        
+                        @{
+                            DateTime currentDate = DateTime.Now;
+                            DateTime manufacturingDate = skate.ManufacturingDate;
+                            bool isNewProduct = manufacturingDate.Month == currentDate.Month &&
+                                                manufacturingDate.Year == currentDate.Year;
+                        }
+                        @if (isNewProduct)
+                        {
+                            <div class="card-new-product">NOVO</div>
+                        }
+
                         <div class="card-img">
                             <img src="@skate.ImagePath" alt=""/>
                         </div>
@@ -30,7 +42,7 @@
                             Detalhes
                         </a>
                     </div>
-                    <p style="margin-top: 24px; font-size: 16px; text-transform: uppercase;">@skate.Name</p>
+                    <p style="margin-top: 8px; font-size: 16px; text-transform: uppercase;">@skate.Name</p>
                     <p style="font-size:  24px; font-weight: bold;">@Html.DisplayFor(model => skate.Price)</p>
                 </div>
                 
