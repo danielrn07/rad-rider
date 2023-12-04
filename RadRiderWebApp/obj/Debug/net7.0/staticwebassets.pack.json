@@ -29,6 +29,50 @@
       "PackagePath": "staticwebassets/img/skate1.jpg"
     },
     {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate10.jpg",
+      "PackagePath": "staticwebassets/img/skate10.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate11.jpg",
+      "PackagePath": "staticwebassets/img/skate11.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate12.jpg",
+      "PackagePath": "staticwebassets/img/skate12.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate2.jpg",
+      "PackagePath": "staticwebassets/img/skate2.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate3.jpg",
+      "PackagePath": "staticwebassets/img/skate3.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate4.jpg",
+      "PackagePath": "staticwebassets/img/skate4.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate5.jpg",
+      "PackagePath": "staticwebassets/img/skate5.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate6.jpg",
+      "PackagePath": "staticwebassets/img/skate6.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate7.jpg",
+      "PackagePath": "staticwebassets/img/skate7.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate8.jpg",
+      "PackagePath": "staticwebassets/img/skate8.jpg"
+    },
+    {
+      "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/img/skate9.jpg",
+      "PackagePath": "staticwebassets/img/skate9.jpg"
+    },
+    {
       "Id": "/home/nascimento/Documents/C#/RadRider/RadRiderWebApp/RadRiderWebApp/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

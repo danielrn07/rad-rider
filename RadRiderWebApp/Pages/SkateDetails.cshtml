@@ -70,20 +70,14 @@
                     </li>
                 }
                 
-                @* <li> *@
-                @*     @Model.Skate.LimitedEditionFormatted *@
-                @* </li> *@
-                
                 @{
                     DateTime currentDate = DateTime.Now;
                     DateTime manufacturingDate = Model.Skate.ManufacturingDate;
                     bool isNewProduct = manufacturingDate.Month == currentDate.Month &&
                                         manufacturingDate.Year == currentDate.Year;
                 }
-                 @* class="@(isNewProduct ? "Produto Novo" : "")" *@
                 <li>
                     <label asp-for="Skate.ManufacturingDate"></label>:
-                    @* @Html.DisplayFor(model => ) *@
                     <span>@(isNewProduct ? "Produto Novo" : "")</span>
                 </li>
             </ul>
