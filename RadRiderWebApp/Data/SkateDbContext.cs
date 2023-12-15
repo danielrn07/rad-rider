@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RadRiderWebApp.Models;
 
 namespace RadRiderWebApp.Data;
 
-public class SkateDbContext : DbContext
+public class SkateDbContext : IdentityDbContext
 {
     public DbSet<Skate> Skate { get; set; }
     public DbSet<Brand> Brand { get; set; }

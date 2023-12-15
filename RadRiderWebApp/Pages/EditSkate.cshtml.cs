@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -7,6 +8,7 @@ using RadRiderWebApp.Services;
 
 namespace RadRiderWebApp.Pages;
 
+[Authorize]
 public class EditSkateModel : PageModel
 {
     public SelectList BrandOptionItems { get; set; }

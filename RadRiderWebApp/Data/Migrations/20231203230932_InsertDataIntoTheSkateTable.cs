@@ -22,7 +22,7 @@ namespace RadRiderWebApp.Data.Migrations
             {
                 new Skate
                 {
-                    Name = "Skate Clássico",
+                    Name = "Punk Rocker",
                     Description = "Skate tradicional para manobras urbanas. Perfeito para deslizar nas ruas, com alta durabilidade e estabilidade.",
                     ImagePath = "/img/skate1.jpg",
                     Size = 7.75,
@@ -36,7 +36,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Street Pro",
+                    Name = "The Urban Pro",
                     Description = "Ideal para manobras avançadas e competições. Design ergonômico para melhor performance em pistas.",
                     ImagePath = "/img/skate2.jpg",
                     Size = 8.0,
@@ -50,7 +50,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Cruiser",
+                    Name = "Pink Freud",
                     Description = "Skate ideal para cruzeiros e deslocamentos urbanos. Oferece estabilidade e conforto para longos trajetos.",
                     ImagePath = "/img/skate3.jpg",
                     Size = 8.125,
@@ -64,7 +64,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Radical",
+                    Name = "Lightning Bolt",
                     Description = "Skate resistente para pistas desafiadoras. Alta performance e durabilidade para manobras radicais.",
                     ImagePath = "/img/skate4.jpg",
                     Size = 8.25,
@@ -78,7 +78,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Street",
+                    Name = "The Donut Dream",
                     Description = "Ótima opção para iniciantes nas ruas. Versátil e fácil de manobrar para aprender truques.",
                     ImagePath = "/img/skate5.jpg",
                     Size = 8.5,
@@ -92,7 +92,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Longboard",
+                    Name = "Thunderstorm",
                     Description = "Longboard para velocidade e curvas suaves. Confortável e estável para viagens urbanas.",
                     ImagePath = "/img/skate6.jpg",
                     Size = 8.75,
@@ -106,7 +106,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Retro",
+                    Name = "FlaSkate",
                     Description = "Estilo retrô para quem curte nostalgia. Design clássico para uma experiência vintage.",
                     ImagePath = "/img/skate7.jpg",
                     Size = 9.0,
@@ -120,7 +120,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Freestyle",
+                    Name = "Dollar Sign",
                     Description = "Liberdade total para manobras variadas. Ideal para expressar criatividade no skate.",
                     ImagePath = "/img/skate8.jpg",
                     Size = 7.75,
@@ -134,7 +134,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Penny",
+                    Name = "The Outlaw",
                     Description = "Leve e ágil para deslocamentos urbanos. Ótimo para viagens diárias e passeios descontraídos.",
                     ImagePath = "/img/skate9.jpg",
                     Size = 8.0,
@@ -148,7 +148,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Pro Model",
+                    Name = "Warrior",
                     Description = "Inspirado no modelo de um profissional. Alta qualidade para desempenho excepcional.",
                     ImagePath = "/img/skate10.jpg",
                     Size = 8.125,
@@ -162,7 +162,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Old School",
+                    Name = "Martian",
                     Description = "Estilo vintage para os adeptos do antigo. Design clássico para os amantes do skate retrô.",
                     ImagePath = "/img/skate11.jpg",
                     Size = 8.25,
@@ -176,7 +176,7 @@ namespace RadRiderWebApp.Data.Migrations
                 },
                 new Skate
                 {
-                    Name = "Skate Cruiser Pro",
+                    Name = "Reaper",
                     Description = "Versatilidade e performance para cruzeiros. Ótima opção para quem busca conforto e estilo.",
                     ImagePath = "/img/skate12.jpg",
                     Size = 8.5,

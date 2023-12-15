@@ -3,18 +3,28 @@ using NToastNotify;
 using RadRiderWebApp.Data;
 using RadRiderWebApp.Services;
 using RadRiderWebApp.Services.Data;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
-{
-    ProgressBar = true,
-    PositionClass = ToastPositions.TopRight
-});
+builder.Services.AddRazorPages(options => {
+        options.Conventions.AuthorizeFolder("/Brands");
+        options.Conventions.AuthorizeFolder("/Categories");
+        options.Conventions.AuthorizeFolder("/SkateModels");
+        options.Conventions.AuthorizeFolder("/Tags");
+    })
+    .AddNToastNotifyToastr(new ToastrOptions()
+    {
+        ProgressBar = true,
+        PositionClass = ToastPositions.TopRight
+    });
 
 builder.Services.AddTransient<ISkateService, SkateService>();
 builder.Services.AddDbContext<SkateDbContext>();
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<SkateDbContext>();
 
 var app = builder.Build();
 
@@ -35,6 +45,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseNToastNotify();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

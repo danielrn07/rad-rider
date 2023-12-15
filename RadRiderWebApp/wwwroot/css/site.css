@@ -113,7 +113,6 @@ h2 {
 
 .card-item {
   position: relative;
-  border: 1px solid rgba(227, 226, 226, 0.70);
   z-index: 0;
   overflow: hidden;
   width: 260px;
